@@ -10,22 +10,26 @@ const LikeSection = props => {
   // 🔥 Make sure the parent of LikeSection is passing the right props!
   const { likePost, numberOfLikes } = props;
 
+
   return (
     <div>
       <div
         className='like-section'
         key='likes-icons-container'
       >
-        <div className='like-section-wrapper'>
-          <FontAwesomeIcon icon={faHeart} />
+        <div className='like-section-wrapper' onClick={(event)=> likePost()}>
+          <FontAwesomeIcon icon={faHeart}  />
         </div>
         <div className='like-section-wrapper'>
           <FontAwesomeIcon icon={faComment} />
         </div>
       </div>
-      <p className='like-number'>100 likes</p>
+      <p className='like-number'>{numberOfLikes}</p>
     </div>
   );
+
+  const itIs = document.querySelector("like-section-wrapper")
+
 };
 
 export default LikeSection;
